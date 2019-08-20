@@ -23,8 +23,11 @@ You need to first download the training, validation, and testing sets from DeepS
 [here] (<http://deepsea.princeton.edu/media/code/deepsea_train_bundle.v0.9.tar.gz>). After you have extracted the 
 contents of the tar.gz file, move the 3 .mat files into the data/ folder. 
 
-### Preprocess
+### Model
+The model that trained by myself is available in BAIDU Net Disk [here] (https://pan.baidu.com/s/1tfYvDoO6Xvt7v7y70nDsXg)
 
+
+### Preprocess
 Because of my RAM limited, I firstly transform the train.mat file to .tfrecord files.
 ```
 python preprocess.py
