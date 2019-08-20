@@ -1,16 +1,16 @@
-# Bioinfor_DeepSEA （DeepSEA implemented by Tensorflow-2.0）
+# Bioinfor DeepSEA （Implemented by TF-2.0）
 
 This is implemented by tensorflow-2.0 again.
 
 
-## INSTALL
-We run training on Ubuntu 18.04 LTS with a GTX 1080ti GPU. 
+## REQUIREMENT
+We run the code on Ubuntu 18.04 LTS with a GTX 1080ti GPU.
 
 ### Required
 - [Python] (<https://www.python.org>) (3.7.3). 
 The easiest way to install Python and all of the necessary dependencies is to download and install [Anaconda] 
-(<https://repo.anaconda.com/archive/>) (Anaconda3-2019.03-Linux-x86_64.sh).
-- [Tensorflow] (<https://tensorflow.google.cn/install>) (2.0.0beta1).
+(<https://repo.anaconda.com/archive/>)
+- [Tensorflow] (<https://tensorflow.google.cn/install>) (2.0.0-beta1).
 
 ### Optional
 - [CUDA] (<https://developer.nvidia.com/cuda-toolkit-archive>) (10.0)
@@ -43,9 +43,6 @@ When you have trained successfully, you can evaluate the model.
 ```
 CUDA_VISIBLE_DEVICES=0 python main.py -e test
 ```
-
-### OPTIONAL
-For convenience，you can used my trained [bestmodel].
 
 ## REFERENCE
 > [DeepSEA] (<https://www.nature.com/articles/nmeth.3547>)(<https://github.com/jisraeli/DeepSEA>)
