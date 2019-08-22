@@ -50,6 +50,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py -e test
 ```
 
 ## Result
+You can get my result in the **`./result/`** directory.
 
 ### Loss Curve
 ![model loss](./result/model_loss.jpg)
@@ -64,7 +65,5 @@ TFBinding|0.9071|0.2400
 HistoneMark|0.8270|0.3277
 ALL|0.8960|0.2691
 
-
-
 ## REFERENCE
-> [DeepSEA](<https://www.nature.com/articles/nmeth.3547>) Github (<https://github.com/jisraeli/DeepSEA>)
+> [Predicting effects of noncoding variants with deep learning based sequence model](<https://www.nature.com/articles/nmeth.3547>) [Github](<https://github.com/jisraeli/DeepSEA>)
