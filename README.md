@@ -25,7 +25,7 @@ We run the code on Ubuntu 18.04 LTS with a GTX 1080ti GPU.
 ### Data
 You need to first download the training, validation, and testing sets from DeepSEA. You can download the datasets from 
 [here](<http://deepsea.princeton.edu/media/code/deepsea_train_bundle.v0.9.tar.gz>). After you have extracted the
-contents of the tar.gz file, move the 3 .mat files into the data/ folder. 
+contents of the tar.gz file, move the 3 .mat files into the **`./data/`** folder.
 
 ### Model
 The model that trained by myself is available in BAIDU Net Disk [here](https://pan.baidu.com/s/1tfYvDoO6Xvt7v7y70nDsXg)
