@@ -7,7 +7,7 @@ This is implemented by tensorflow-2.0 again.
 ## DeepSEA
 
 ### Model Architecture
-![model architecture](./result/model_DeepSEA.png "Model Architecture")
+![model architecture](./result/model_DeepSEA.png "Model Architecture"){:height="100"}
 
 ### Loss Function
 Binary Cross Entropy.
@@ -59,12 +59,11 @@ You can get my result in the **`./result/`** directory.
 ### Metric
 We use two metric to evaluate the model. (AUROC, AUPR)
 
--|AUROC|AUPR
-:-:|:-:|:-:
-DNase|0.8925|0.3809
-TFBinding|0.9071|0.2400
-HistoneMark|0.8270|0.3277
-ALL|0.8960|0.2691
+-|DNase|TFBinding|HistoneMark|All
+:-:|:-:|:-:|:-:|:-:
+AUROC|0.8925|0.9071|0.8270|0.8960
+AUPR|0.3809|0.2400|0.3277|0.2691
+
 
 ## REFERENCE
 > [Predicting effects of noncoding variants with deep learning-based sequence model](<https://www.nature.com/articles/nmeth.3547>) | [Github](<https://github.com/jisraeli/DeepSEA>)
