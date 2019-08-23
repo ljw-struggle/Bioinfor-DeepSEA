@@ -7,8 +7,7 @@ This is implemented by tensorflow-2.0 again.
 ## DeepSEA
 
 ### Model Architecture
-<!-- ![model architecture](./result/model_DeepSEA.png "Model Architecture") -->
-<img src="./result/model_DeepSEA.png" width=512 height=512 />
+![model architecture](./result/model_DeepSEA.png "Model Architecture")
 
 ### Loss Function
 Binary Cross Entropy.
