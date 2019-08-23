@@ -1,12 +1,13 @@
-# Bioinfor DeepSEA （Implemented by TF-2.0）
+# Bioinfor DeepSEA
 
+DeepSEA is a model to predicting effects of noncoding variants.
 This is implemented by tensorflow-2.0 again.
 
 
 ## DeepSEA
 
 ### Model Architecture
-![model architecture](./result/model_DeepSEA.png)
+![model architecture](./result/model_DeepSEA.png "Model Architecture")
 
 ### Loss Function
 Binary Cross Entropy.
