@@ -7,7 +7,8 @@ This is implemented by tensorflow-2.0 again.
 ## DeepSEA
 
 ### Model Architecture
-![model architecture](./result/model_DeepSEA.png "Model Architecture"){:height="100"}
+<!-- ![model architecture](./result/model_DeepSEA.png "Model Architecture") -->
+<img src="./result/model_DeepSEA.png" width=512 height=512 />
 
 ### Loss Function
 Binary Cross Entropy.
@@ -50,7 +51,7 @@ When you have trained successfully, you can evaluate the model.
 CUDA_VISIBLE_DEVICES=0 python main.py -e test
 ```
 
-## Result
+## RESULT
 You can get my result in the **`./result/`** directory.
 
 ### Loss Curve
