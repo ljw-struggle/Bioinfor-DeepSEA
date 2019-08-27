@@ -7,7 +7,7 @@ This is implemented by tensorflow-2.0 again.
 ## DeepSEA
 
 ### Model Architecture
-![model architecture](./result/model_DeepSEA.png "Model Architecture")
+CNN + Pool + CNN + Pool + CNN + Dense + Dense
 
 ### Loss Function
 Binary Cross Entropy.
