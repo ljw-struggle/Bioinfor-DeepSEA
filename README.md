@@ -10,7 +10,8 @@ This is implemented by tensorflow-2.0 again.
 CNN + Pool + CNN + Pool + CNN + Dense + Dense
 
 ### Loss Function
-Binary Cross Entropy.
+Binary Cross Entropy
+
 ### Optimization Method
 SGD with Momentum (momentum = 0.9)
 
