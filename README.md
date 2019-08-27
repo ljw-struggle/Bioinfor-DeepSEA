@@ -19,7 +19,7 @@ SGD with Momentum (momentum = 0.9)
 ### Requirement
 We run the code on Ubuntu 18.04 LTS with a GTX 1080ti GPU.
 
-[Python](<https://www.python.org>) (3.7.3) | [Tensorflow](<https://tensorflow.google.cn/install>) (2.0.0-beta1)
+[Python](<https://www.python.org>) (3.7.3) | [Tensorflow](<https://tensorflow.google.cn/install>) (2.0.0)
 | [CUDA](<https://developer.nvidia.com/cuda-toolkit-archive>) (10.0) | [cuDNN](<https://developer.nvidia.com/cudnn>) (7.4.1)
 
 ### Data
