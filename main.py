@@ -79,6 +79,7 @@ def test():
     # Because the tensorflow delay the creation of variables in model and optimizer, so the optimizer status will
     # be restored when the model is trained first. like: model.train_on_batch(x[0:1], y[0:1])
     model.load_weights('./result/model/ckpt')
+    # model.load_weights('./result/model/bestmodel.h5')
 
     result = model.predict(x) # shape = (455024, 919)
 
