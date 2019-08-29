@@ -27,17 +27,22 @@ def train():
     model.build(input_shape = (None, 1000, 4))
     model.summary()
 
-    # Define the callbacks. (check_pointer\early_stopper)
+    # Define the callbacks. (check_pointer\early_stopper\tensor_boarder)
+    # For check_pointer: we save the model in SavedModel format
+    # (Weights-only saving that contains model weights and optimizer status)
     check_pointer = tf.keras.callbacks.ModelCheckpoint(
-        filepath='./result/model/bestmodel.h5',
+        filepath='./result/model/ckpt',
         verbose=0,
         save_best_only=True,
         save_weights_only=True,
-        save_freq='epoch')
+        save_freq='epoch',
+        load_weights_on_restart=False)
     early_stopper = tf.keras.callbacks.EarlyStopping(
         monitor='val_loss',
         patience=5,
         verbose=0)
+    tensor_boarder = tf.keras.callbacks.TensorBoard(
+        log_dir='./result/logs')
 
     # Training the model.
     history = model.fit(
@@ -46,7 +51,8 @@ def train():
         steps_per_epoch=4400000/64,
         verbose=2,
         validation_data = valid_data,
-        callbacks=[check_pointer, early_stopper])
+        validation_steps=8000/64,
+        callbacks=[check_pointer, early_stopper, tensor_boarder])
 
     # Plot the loss curve of training and validation, and save the loss value of training and validation.
     print('\n history dict: ', history.history)
@@ -63,11 +69,16 @@ def test():
 
     # Recreate the model.
     model = DeepSEA()
+    model.compile(
+        optimizer=tf.keras.optimizers.SGD(momentum=0.9),
+        loss=tf.keras.losses.BinaryCrossentropy())
     model.build(input_shape = (None, 1000, 4))
     model.summary()
 
-    # Load the weights of the old model. (The weights only content the weights of model.)
-    model.load_weights('./result/model/bestmodel.h5')
+    # Load the weights of the old model. (The weights content the weights of model and status of optimizer.)
+    # Because the tensorflow delay the creation of variables in model and optimizer, so the optimizer status will
+    # be restored when the model is trained first. like: model.train_on_batch(x[0:1], y[0:1])
+    model.load_weights('./result/model/ckpt')
 
     result = model.predict(x) # shape = (455024, 919)
 
