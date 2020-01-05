@@ -86,7 +86,9 @@ def test():
     np.savez('./result/test_result.npz',
              result = result, label = y)
 
+    result = np.mean((result[0:227512], result[227512:]), axis=0)
     result_shape = np.shape(result)
+    y = y[0:227512]
 
     fpr_list, tpr_list, auroc_list = [], [], []
     precision_list, recall_list, aupr_list = [], [], []
