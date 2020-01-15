@@ -8,9 +8,9 @@ from tqdm import tqdm
 
 from model import DeepSEA
 from loader import get_train_data, get_valid_data, get_test_data
-from utils.plots import plot_loss_curve, plot_roc_curve, plot_pr_curve
-from utils.metrics import calculate_auroc, calculate_aupr
-from utils.utils import create_dirs, write2txt, write2csv
+from utils import plot_loss_curve, plot_roc_curve, plot_pr_curve
+from utils import calculate_auroc, calculate_aupr
+from utils import create_dirs, write2txt, write2csv
 
 np.random.seed(0)
 tf.random.set_seed(0)

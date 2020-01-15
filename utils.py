@@ -1,7 +1,73 @@
 # -*- coding: utf-8 -*-
 import os
+import csv
+import os
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn import metrics
+
+def create_dirs(dirs):
+    """
+    Create dirs. (recurrent)
+    :param dirs: a list directory path.
+    :return: None
+    """
+    for path in dirs:
+        if not os.path.exists(path):
+            os.makedirs(path, exist_ok=False)
+
+def write2txt(content, file_path):
+    """
+    Write array to .txt file.
+    :param content: array.
+    :param file_path: destination file path.
+    :return: None.
+    """
+    try:
+        file_name = file_path.split('/')[-1]
+        dir_path = file_path.replace(file_name, '')
+        if not os.path.exists(dir_path):
+            os.makedirs(dir_path)
+
+        with open(file_path, 'w+') as f:
+            for item in content:
+                f.write(' '.join([str(i) for i in item]) + '\n')
+
+        print("write over!")
+    except IOError:
+        print("fail to open file!")
+
+def write2csv(content, file_path):
+    """
+    Write array to .csv file.
+    :param content: array.
+    :param file_path: destination file path.
+    :return: None.
+    """
+    try:
+        temp = file_path.split('/')[-1]
+        temp = file_path.replace(temp, '')
+        if not os.path.exists(temp):
+            os.makedirs(temp)
+
+        with open(file_path, 'w+', newline='') as f:
+            csv_writer = csv.writer(f, dialect='excel')
+            for item in content:
+                csv_writer.writerow(item)
+
+        print("write over!")
+    except IOError:
+        print("fail to open file!")
+
+def calculate_auroc(predictions, labels):
+    fpr_list, tpr_list, threshold_list = metrics.roc_curve(y_true=labels, y_score=predictions)
+    auroc = metrics.auc(fpr_list, tpr_list)
+    return fpr_list, tpr_list, auroc
+
+def calculate_aupr(predictions, labels):
+    precision_list, recall_list, threshold_list = metrics.precision_recall_curve(y_true=labels, probas_pred=predictions)
+    aupr = metrics.auc(recall_list, precision_list)
+    return precision_list, recall_list, aupr
 
 def plot_loss_curve(train_loss, val_loss, file_path):
     """
